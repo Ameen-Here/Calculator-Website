@@ -1,48 +1,18 @@
+const buttons = document.querySelectorAll("button");
+const curValDisplay = document.getElementById("cur-val-header");
+const prevValDisplay = document.querySelector(".prev-total");
+
 let curVal = 0;
 let curValStr = "";
 let prevValue = 0;
 let pendingOperation = "";
-
-const buttons = document.querySelectorAll("button");
-
-const curValDisplay = document.getElementById("cur-val-header");
-const prevValDisplay = document.querySelector(".prev-total");
 
 function updateDisplay() {
   curValDisplay.textContent = curVal;
   prevValDisplay.textContent = prevValue;
 }
 
-function evaluate(value, type) {
-  if (type === "number") {
-    curValStr += value;
-    curVal = +curValStr;
-    if (value === ".") {
-      curVal = 0.0;
-    }
-    curVal = +curValStr;
-  } else if (type === "eval") {
-    if (pendingOperation === "") prevValue = curVal;
-    else if (pendingOperation === "+") add();
-    else if (pendingOperation === "-") subtract();
-    else if (pendingOperation === "X") multiply();
-    else if (pendingOperation === "/") divide();
-    else if (pendingOperation === "%") remainder();
-    console.log(value);
-    if (value !== "=") {
-      console.log("here");
-      curVal = 0;
-      curValStr = "";
-      pendingOperation = value;
-    } else {
-      pendingOperation = "";
-      curVal = prevValue;
-      curValStr = prevValue.toString();
-    }
-  } else if (type === "clear") reset();
-  updateDisplay();
-}
-
+// Arthematic Functions
 function add() {
   prevValue += curVal;
 }
@@ -75,6 +45,38 @@ function reset() {
   updateDisplay();
 }
 
+//   Calculator Main Function
+function evaluate(value, type) {
+  if (type === "number") {
+    curValStr += value;
+    curVal = +curValStr;
+    if (value === ".") {
+      curVal = 0.0;
+    }
+    curVal = +curValStr;
+  } else if (type === "eval") {
+    if (pendingOperation === "") prevValue = curVal;
+    else if (pendingOperation === "+") add();
+    else if (pendingOperation === "-") subtract();
+    else if (pendingOperation === "X") multiply();
+    else if (pendingOperation === "/") divide();
+    else if (pendingOperation === "%") remainder();
+    console.log(value);
+    if (value !== "=") {
+      console.log("here");
+      curVal = 0;
+      curValStr = "";
+      pendingOperation = value;
+    } else {
+      pendingOperation = "";
+      curVal = prevValue;
+      curValStr = prevValue.toString();
+    }
+  } else if (type === "clear") reset();
+  updateDisplay();
+}
+
+// Listening to button events
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const method = e.target.className;
@@ -88,3 +90,9 @@ buttons.forEach((button) => {
     }
   });
 });
+
+// Footer year dynamic
+const yearDisplay = document.getElementById("year");
+const dt = new Date();
+const curYear = dt.getFullYear();
+yearDisplay.textContent = curYear;

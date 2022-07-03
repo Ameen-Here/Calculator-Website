@@ -16,6 +16,7 @@ main {
   flex: 1;
 }
 
+/* CALCULATOR FULL BODY */
 .calculator {
   display: flex;
   flex-direction: column;
@@ -33,14 +34,7 @@ main {
   align-items: center;
 }
 
-.calculator-company {
-  padding: 10px;
-  padding-bottom: 0;
-  padding-left: 30px;
-  font-size: large;
-  align-self: flex-start;
-}
-
+/* CALCULATOR DISPLAY */
 .calculator-display {
   padding: 10px;
   margin-top: 20px;
@@ -64,6 +58,7 @@ main {
   font-size: 28px;
 }
 
+/* CALCULATOR KEYS AND BUTTONS  */
 .calculator-keys {
   padding-top: 30px;
 }
