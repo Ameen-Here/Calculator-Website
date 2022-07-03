@@ -13,35 +13,40 @@
     </header>
     <main class="calculator">
       <div class="calculator-body">
-        <div class="calculator-display"></div>
+        <div class="calculator-display">
+          <div class="prev-total">0</div>
+          <div class="cur-val"><h5 id="cur-val-header">0</h5></div>
+        </div>
         <div class="calculator-keys">
           <div class="row-1">
-            <button id="clear-key" style="width: 144px">Clear</button>
-            <button id="rem-key">%</button>
-            <button id="div-key">/</button>
+            <button class="reset" id="clear-key" style="width: 150px">
+              Clear
+            </button>
+            <button class="eval" id="rem-key">%</button>
+            <button class="eval" id="div-key">/</button>
           </div>
           <div class="row-2">
-            <button id="seven-key">7</button>
-            <button id="eight-key">8</button>
-            <button id="nine-key">9</button>
-            <button id="multi-key">X</button>
+            <button class="number" id="seven-key">7</button>
+            <button class="number" id="eight-key">8</button>
+            <button class="number" id="nine-key">9</button>
+            <button class="eval" id="multi-key">X</button>
           </div>
           <div class="row-3">
-            <button id="four-key">4</button>
-            <button id="five-key">5</button>
-            <button id="six-key">6</button>
-            <button id="minus-key">-</button>
+            <button class="number" id="four-key">4</button>
+            <button class="number" id="five-key">5</button>
+            <button class="number" id="six-key">6</button>
+            <button class="eval" id="minus-key">-</button>
           </div>
           <div class="row-2">
-            <button id="one-key">1</button>
-            <button id="two-key">2</button>
-            <button id="three-key">3</button>
-            <button id="add-key">+</button>
+            <button class="number" id="one-key">1</button>
+            <button class="number" id="two-key">2</button>
+            <button class="number" id="three-key">3</button>
+            <button class="eval" id="add-key">+</button>
           </div>
           <div class="row-1">
-            <button id="zero-key" style="width: 144px">0</button>
-            <button id="dot-key">.</button>
-            <button id="equal-key">=</button>
+            <button class="number" id="zero-key" style="width: 150px">0</button>
+            <button class="number" id="dot-key">.</button>
+            <button class="eval" id="equal-key">=</button>
           </div>
         </div>
       </div>
@@ -49,5 +54,6 @@
     <footer>
       <p>Copyright 2022 Ameen Noushad</p>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
